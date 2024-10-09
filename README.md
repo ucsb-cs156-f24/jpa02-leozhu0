@@ -1,9 +1,4 @@
-# STARTER-jpa01
-
-* TODO: Change the title of this README 
-  in the text `# STARTER-jpa01` above
-  to match the name of your repo, i. e., `jpa01-yourgithubid`, then delete
-  this TODO item.
+# jpa02-leozhu0
 
 * TODO: Correct the links to repo below, 
   then delete this TODO.  Replace it with 
