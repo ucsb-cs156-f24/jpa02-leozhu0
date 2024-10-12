@@ -9,11 +9,14 @@ public class TeamTest {
 
     Team team;
     Team other;
+    Team duplicate;
 
     @BeforeEach
     public void setup() {
         team = new Team("test-team");
         other = new Team("other-team");    
+        duplicate = new Team("test-team");
+        duplicate.addMember("test");
     }
 
     @Test
@@ -31,6 +34,7 @@ public class TeamTest {
         assertEquals(team.equals(team), true);
         assertEquals(team.equals(1), false);
         assertEquals(team.equals(other), false);
+        assertEquals(team.equals(duplicate), false);
     }
 
     @Test
