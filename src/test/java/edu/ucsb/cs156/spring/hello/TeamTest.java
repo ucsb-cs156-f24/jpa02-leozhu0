@@ -8,10 +8,12 @@ import org.junit.jupiter.api.Test;
 public class TeamTest {
 
     Team team;
+    Team other;
 
     @BeforeEach
     public void setup() {
-        team = new Team("test-team");    
+        team = new Team("test-team");
+        other = new Team("other-team");    
     }
 
     @Test
@@ -19,8 +21,20 @@ public class TeamTest {
        assert(team.getName().equals("test-team"));
     }
 
-   
-    // TODO: Add additional tests as needed to get to 100% jacoco line coverage, and
-    // 100% mutation coverage (all mutants timed out or killed)
+    @Test
+    public void toString_returns_correct_string() {
+        assertEquals("Team(name=test-team, members=[])", team.toString());
+    }
 
+    @Test
+    public void equals_returns_correct_boolean() {
+        assertEquals(team.equals(team), true);
+        assertEquals(team.equals(1), false);
+        assertEquals(team.equals(other), false);
+    }
+
+    @Test
+    public void hashCode_returns_correct_boolean() {
+        assertEquals(team.hashCode(), (team.getName().hashCode() | team.getMembers().hashCode()));
+    }
 }
